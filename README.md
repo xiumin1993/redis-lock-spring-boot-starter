@@ -1,4 +1,4 @@
-# xm-component
+# redis-lock-spring-boot-starter
 
 #### 介绍
 
