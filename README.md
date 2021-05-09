@@ -2,8 +2,7 @@
 
 #### 介绍
 
-各类组件:
-基于spring-boot-start-data-redis的redis锁， 基于easyexcel的导出注解 普通java工具类 基于httpclient的httpTemplate
+基于spring-boot-start-data-redis的分布式锁
 
 #### redis lock 介绍
 
