@@ -55,9 +55,9 @@
     <developers>
         <developer>
             <email>xiumin1993@outlook.com</email>
-            <name>min.xiu</name>
+            <name>xiumin</name>
             <url>https://github.com/xiumin1993</url>
-            <id>xiumin1993</id>
+            <id>xiumin</id>
         </developer>
     </developers>
     <issueManagement>
@@ -143,12 +143,14 @@
     </build>
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>ossrh</id>
+            <name>snapshots</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>ossrh</id>
+            <name>snapshots</name>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
 
