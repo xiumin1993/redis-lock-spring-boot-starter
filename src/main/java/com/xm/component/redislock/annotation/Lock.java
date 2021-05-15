@@ -18,30 +18,22 @@ public @interface Lock {
      * 锁过期时间  单位：ms(毫秒)
      * 若expirationTime = 0 则锁没有过期时间，方法结束后会自动释放锁
      *
-     * @return
+     * @return 过期时间
      */
     long expirationTime() default 0;
 
     /**
-     * 重试次数，
-     * 0 不重试
-     * < 0 无限次重试
-     *
-     * @return
+     * @return 重试次数, 0重试, 小于0无限次重试
      */
     int retry() default 0;
 
     /**
-     * 获取锁重试间隔时间，单位：毫秒
-     *
-     * @return
+     * @return 获取锁重试间隔时间
      */
     long frequency() default 200;
 
     /**
-     * 是否使用全局配置的参数
-     *
-     * @return
+     * @return 是否使用全局配置的参数
      */
     boolean useGlobalConfig() default true;
 }

@@ -14,7 +14,6 @@ import java.util.function.Supplier;
 
 /**
  * @author xiumin
- * @email xiumin1993@outlook.com
  */
 @Slf4j
 public class RedisLockComponent {
@@ -52,6 +51,7 @@ public class RedisLockComponent {
      *
      * @param key 锁key
      * @return 返回锁对象
+     * @throws GetRedisLockException 获取锁异常
      */
     public RedisLock tryLockElseException(String key) throws GetRedisLockException {
         return tryLockElseException(key, redisLockGlobalConfig.getDuration(), redisLockGlobalConfig.getRetry(), redisLockGlobalConfig.getFrequency());
@@ -62,9 +62,9 @@ public class RedisLockComponent {
      * 获取锁，未获取到抛出异常
      *
      * @param key      锁key
-     * @param duration 锁过期时间
-     *                 <=0 表示不过期
+     * @param duration 锁过期时间;小于0,表示不过期
      * @return 返回锁对象
+     * @throws GetRedisLockException 获取锁异常
      */
     public RedisLock tryLockElseException(String key, Duration duration) throws GetRedisLockException {
         return tryLockElseException(key, duration, redisLockGlobalConfig.getRetry(), redisLockGlobalConfig.getFrequency());
@@ -77,9 +77,7 @@ public class RedisLockComponent {
      *
      * @param key       锁key
      * @param duration  锁过期时间
-     * @param retry     重试次数（）
-     *                  = 0 次表示不重试 相当于 tryLockOrException 方法
-     *                  < 0 表示一直重试
+     * @param retry     重试次数， 0 次表示不重试 相当于 tryLockOrException 方法 ， 0 表示一直重试
      * @param frequency 重试间隔, 单位： 毫秒 (ms)
      * @return 返回锁
      * @throws GetRedisLockException 获取锁异常
@@ -141,7 +139,6 @@ public class RedisLockComponent {
      * 释放锁
      *
      * @param lock 锁
-     * @return 锁
      */
     public void unlock(RedisLock lock) {
         Long execute = stringRedisTemplate.execute((RedisCallback<Long>) redisConnection ->
