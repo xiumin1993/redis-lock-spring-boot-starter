@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>xm.test</groupId>
+    <groupId>io.github.xiumin1993</groupId>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>redis-lock-spring-boot-starter</artifactId>
@@ -12,6 +12,8 @@
         <java.version>1.8</java.version>
         <project.encoding>UTF-8</project.encoding>
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <dependencies>
         <dependency>
@@ -64,8 +66,7 @@
     </issueManagement>
     <scm>
         <connection>scm:git@github.com:xiumin1993/redis-lock-spring-boot-starter.git</connection>
-        <developerConnection>scm:git@github.com:xiumin1993/redis-lock-spring-boot-starter.git</developerConnection>
-        <url>git@github.com:xiumin1993/redis-lock-spring-boot-starter.git</url>
+        <url>https://github.com/xiumin1993/redis-lock-spring-boot-starter</url>
     </scm>
 
     <build>
@@ -73,6 +74,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>${java.version}</source>
