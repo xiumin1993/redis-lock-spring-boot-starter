@@ -10,7 +10,7 @@ import java.time.Duration;
 /**
  * 获取锁时的默认参数
  */
-@ConfigurationProperties(prefix = "redis-clock")
+@ConfigurationProperties(prefix = "redis-lock")
 @Data
 public class RedisLockGlobalConfig {
     /**
